@@ -75,14 +75,16 @@ docker pull ghcr.io/curtaintears/gemini-search:latest
 
 # Run with default port (7788)
 docker run -d \
-  -p 3000:3000 \
+  -p 7788:7788 \
+  -e GOOGLE_API_KEY=your_api_key_here \
   --name gemini-search \
   ghcr.io/curtaintears/gemini-search:latest
 
 # Run with custom port
 docker run -d \
-  -p 7788:7788 \
-  -e PORT=7788 \
+  -p 3000:3000 \
+  -e PORT=3000 \
+  -e GOOGLE_API_KEY=your_api_key_here \
   --name gemini-search \
   ghcr.io/curtaintears/gemini-search:latest
 ```
@@ -95,21 +97,24 @@ docker build -t gemini-search .
 
 # Run with default port (7788)
 docker run -d \
-  -p 3000:3000 \
+  -p 7788:7788 \
+  -e GOOGLE_API_KEY=your_api_key_here \
   --name gemini-search \
   gemini-search
 
 # Run with custom port
 docker run -d \
-  -p 7788:7788 \
-  -e PORT=7788 \
+  -p 3000:3000 \
+  -e PORT=3000 \
+  -e GOOGLE_API_KEY=your_api_key_here \
   --name gemini-search \
   gemini-search
 ```
 
 ##### Environment Variables
 
-- `PORT`: Application port (default: 3000)
+- `PORT`: Application port (default: 7788)
+- `GOOGLE_API_KEY`:Your API Key
 
 ##### Architecture Support
 
