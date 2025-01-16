@@ -75,14 +75,14 @@ docker pull ghcr.io/curtaintears/gemini-search:latest
 
 # Run with default port (7788)
 docker run -d \
-  -p 7788:7788 \
+  -p 3000:3000 \
   --name gemini-search \
   ghcr.io/curtaintears/gemini-search:latest
 
 # Run with custom port
 docker run -d \
-  -p 3000:3000 \
-  -e PORT=3000 \
+  -p 7788:7788 \
+  -e PORT=7788 \
   --name gemini-search \
   ghcr.io/curtaintears/gemini-search:latest
 ```
