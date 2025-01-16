@@ -33,6 +33,8 @@ Created by [@ammaar](https://x.com/ammaar)
 
 ### Installation
 
+#### With npm
+
 1. Clone the repository:
 
    ```bash
@@ -62,6 +64,68 @@ Created by [@ammaar](https://x.com/ammaar)
    ```
    http://localhost:3000
    ```
+
+#### Docker Usage
+
+##### Pull from GitHub Container Registry
+
+```bash
+# Pull the image
+docker pull ghcr.io/curtaintears/gemini-search:latest
+
+# Run with default port (7788)
+docker run -d \
+  -p 7788:7788 \
+  --name gemini-search \
+  ghcr.io/curtaintears/gemini-search:latest
+
+# Run with custom port
+docker run -d \
+  -p 3000:3000 \
+  -e PORT=3000 \
+  --name gemini-search \
+  ghcr.io/curtaintears/gemini-search:latest
+```
+
+##### Build and Run Locally
+
+```bash
+# Build the image
+docker build -t gemini-search .
+
+# Run with default port (7788)
+docker run -d \
+  -p 3000:3000 \
+  --name gemini-search \
+  gemini-search
+
+# Run with custom port
+docker run -d \
+  -p 7788:7788 \
+  -e PORT=7788 \
+  --name gemini-search \
+  gemini-search
+```
+
+##### Environment Variables
+
+- `PORT`: Application port (default: 3000)
+
+##### Architecture Support
+
+The Docker image supports both AMD64 (x86-64) and ARM64 architectures, making it compatible with:
+- Traditional Intel/AMD processors
+- Apple Silicon (M1/M2) Macs
+- ARM-based servers
+
+
+## Development | 开发
+
+[Development instructions to be added... | 开发指南待添加...]
+
+## License | 许可证
+
+[Your License | 你的许可证]
 
 ## Environment Variables
 
